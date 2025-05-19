@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --font-dm-sans: "DM Sans", sans-serif;
+  --font-dm-sans-bold: "DM Sans", sans-serif;
+  --font-dm-sans-italic: "DM Sans", sans-serif;
+  --font-dm-sans-bold-italic: "DM Sans", sans-serif;
+
+
+
+}
+
+
+.dark {
+  --main-text: 204, 204, 204;
+  --text: 102, 102, 102;
+  --border: 36, 36, 36;
+  --card-bg: 20, 20, 20;
+  --body-bg-color: 9, 9, 9;
+  --btn-color: 36, 36, 36;
+}
+
+.light {
+  --main-text: 31, 31, 31;
+  --text: 138, 148, 158;
+  --border: 216, 219, 222;
+  --card-bg: 255, 255, 255;
+  --body-bg-color:244, 245, 246;
+  --btn-color: 238, 240, 241;
+}
+
+.scroller {
+  -webkit-mask: linear-gradient(90deg,transparent,white 30%,white 80%,transparent);
+  mask: linear-gradient(90deg,transparent,white 30%,white 80%,transparent);
+}
+
+
+
+
+.scrollbar-none {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* Safari & Chrome */
+}
+.dropdown-btn-shadow:hover {
+  box-shadow: 0 10px 25px rgba(var(--card-bg), 0.3);
+}
+.dropdown-animation {
+  transition: transform 250ms ease-in-out, opacity 100ms ease-in-out;
+}
