@@ -20,16 +20,18 @@
   --border: 36, 36, 36;
   --card-bg: 20, 20, 20;
   --body-bg-color: 9, 9, 9;
-  --btn-color: 36, 36, 36;
+  --btn-color-orange: 255,118,34;
+  --btn-color: 204, 204, 204;
 }
 
 .light {
   --main-text: 31, 31, 31;
   --text: 138, 148, 158;
   --border: 216, 219, 222;
-  --card-bg: 255, 255, 255;
-  --body-bg-color:244, 245, 246;
-  --btn-color: 238, 240, 241;
+
+  --body-bg-color:255, 255, 255;
+  --btn-color-orange: 255,118,34;
+  --btn-color: 244, 245, 246;
 }
 
 .scroller {
@@ -48,7 +50,7 @@
 .scrollbar-none::-webkit-scrollbar {
   display: none; /* Safari & Chrome */
 }
-.dropdown-btn-shadow:hover {
+.dropdown-btn-shadow {
   box-shadow: 0 10px 25px rgba(var(--card-bg), 0.3);
 }
 .dropdown-animation {

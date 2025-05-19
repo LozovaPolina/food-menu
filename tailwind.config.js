@@ -32,7 +32,8 @@ module.exports = {
           'border': 'rgba(var(--border))',
           'card-bg': 'rgba(var(--card-bg))',
           'body-bg-color': 'rgba(var(--body-bg-color))',
-          'btn-color': 'rgba(var(--btn-color))'
+          'btn-color': 'rgba(var(--btn-color))',
+          'btn-color-orange':'rgba(var(--btn-color-orange))'
         },
       boxShadow: {
         'website-overlay': '0 0 7px 0 rgba(0, 0, 0, 0.3)',

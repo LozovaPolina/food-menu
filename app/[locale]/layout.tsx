@@ -32,7 +32,7 @@ export default async function LocaleLayout({children, params}: { children: React
 
     return (
         <html lang={locale} className="h-dvh overflow-y-auto">
-        <body className={`${geistMono.variable} bg-body-bg-color p-2 sm:p-5`}>
+        <body className={`${geistMono.variable} bg-body-bg-color light`}>
             <AppProvider>
                 <NextIntlClientProvider locale={locale}>
                     {children}
