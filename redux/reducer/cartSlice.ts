@@ -1,24 +1,37 @@
 // import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 import {createSlice, type PayloadAction} from "@reduxjs/toolkit";
+import {CategoryItem, itemsByCategoryArray, ItemsByCategoryArrayProps} from "@/data/Meals";
+import {RootState} from "@/redux/store/store";
 
-export type CartItem = {
-	id: string;
-	title: string;
-	price: number;
-	quantity: number;
-};
+
 type CartState = {
-	items: CartItem[];
+	items: ItemsByCategoryArrayProps;
+	category: string;
+	categoryItems:CategoryItem[]
 }
 
 const initialState:CartState = {
-	items: [],
+	items: itemsByCategoryArray,
+	category: 'all',
+	categoryItems: []
 }
-const cartSlice= createSlice({
+const menuSlice= createSlice({
 	name: 'cart',
 	initialState,
 	reducers: {
+		showCategoryItems(state, action: PayloadAction<string>) {
+			const category = action.payload;
+			if (category === "all") {
+				state.categoryItems = state.items.flatMap(categoryObj => categoryObj.items);
+			} else {
+
+				const categoryObj = state.items.find(item => item.category === category);
+				state.categoryItems = categoryObj ? categoryObj.items : [];
+			}
+		},
+
+
 		addToCart(state, action: PayloadAction<{ id: string; title: string, price: number }>): void {
 
 			const { id, title, price } = action.payload;
@@ -44,5 +57,6 @@ const cartSlice= createSlice({
 		},
 	},
 })
-export const selectCartItems = ((state:CartState) => state.items);
-export default cartSlice.reducer;
+export const selectCartItems = ((state:RootState) => state.menu.categoryItems);
+export const { showCategoryItems } = menuSlice.actions;
+export default menuSlice.reducer;

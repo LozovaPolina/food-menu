@@ -12,7 +12,7 @@ export default function Home() {
               <Image src={ellipseGreyImg} alt={'grey orange'} className={'object-fill'}/>
           </div>
           <Image src={logo} alt={'logo'} className={'object-fill'}/>
-          <Button btnText={'Our Menu'} btnLink={'/menu'}/>
+          <Button btnText={'Our Menu'} btnLink={'/menu/all'}/>
             <Dropdown btnText={'Select Language'}/>
           <div className="absolute bottom-0 right-0">
               <Image src={ellipseOrangeImg} alt={'ellipse orange'} className={'object-fill'}/>
