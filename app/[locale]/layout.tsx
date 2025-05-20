@@ -5,6 +5,7 @@ import {hasLocale, NextIntlClientProvider} from "next-intl";
 import {notFound} from "next/navigation";
 import {routing} from "@/i18n/routing";
 import AppProvider from "@/components/AppProvider";
+import Panel from "@/components/panel/Panel";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,10 +33,11 @@ export default async function LocaleLayout({children, params}: { children: React
 
     return (
         <html lang={locale} className="h-dvh overflow-y-auto">
-        <body className={`${geistMono.variable} bg-body-bg-color light`}>
+        <body className={`${geistMono.variable} bg-body-bg-color light relative`}>
             <AppProvider>
                 <NextIntlClientProvider locale={locale}>
                     {children}
+
                 </NextIntlClientProvider>
             </AppProvider>
         </body>

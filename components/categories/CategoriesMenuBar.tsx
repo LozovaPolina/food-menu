@@ -59,8 +59,10 @@ const menu = [
 function CategoriesMenuBar() {
 
 	return (
-		<section className={"w-full bg-black"}>
-			<Swiper items={menu.map(item=> <CategoriesMenuItem key={item.id} text={item.sectionName} link={item.categoryLink}/>)}/>
+		<section className="relative w-full bg-card-bg p-3 mb-8 rounded-xl overflow-hidden">
+
+			<Swiper items={menu.map(item => <CategoriesMenuItem key={item.id} text={item.sectionName}
+			                                                    link={item.categoryLink}/>)}/>
 		</section>
 	);
 }

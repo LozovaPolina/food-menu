@@ -14,7 +14,7 @@ type CartState = {
 const initialState:CartState = {
 	items: itemsByCategoryArray,
 	category: 'all',
-	categoryItems: []
+	categoryItems: itemsByCategoryArray.flatMap(categoryObj => categoryObj.items),
 }
 const menuSlice= createSlice({
 	name: 'cart',

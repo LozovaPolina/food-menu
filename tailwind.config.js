@@ -26,18 +26,25 @@ module.exports = {
           'scroll-x': 'scroll 40s linear infinite',
 
         },
-        colors: {
-          'main-text': 'rgba(var(--main-text))',
-          'text': 'rgba(var(--text))',
-          'border': 'rgba(var(--border))',
-          'card-bg': 'rgba(var(--card-bg))',
-          'body-bg-color': 'rgba(var(--body-bg-color))',
-          'btn-color': 'rgba(var(--btn-color))',
-          'btn-color-orange':'rgba(var(--btn-color-orange))'
-        },
+      colors: {
+        'main-text': 'rgba(var(--main-text))',
+        'text': 'rgba(var(--text))',
+        'border': 'rgba(var(--border))',
+        'card-bg': 'rgba(var(--card-bg))',
+        'body-bg-color': 'rgba(var(--body-bg-color))',
+        'btn-color': 'rgba(var(--btn-color))',
+        'btn-color-orange': 'rgba(var(--btn-color-orange))',
+        'accent': 'rgba(var(--accent))',
+        'price-tag': 'rgba(var(--price-tag))',
+        'btn-bg': 'rgba(var(--btn-bg))',
+        'btn-text': 'rgba(var(--btn-text))',
+        "nav-btn-bg": 'rgba(var(--nav-btn-bg))',
+        "nav-btn-text": 'rgba(var(--nav-btn-text))',
+
+      },
       boxShadow: {
         'website-overlay': '0 0 7px 0 rgba(0, 0, 0, 0.3)',
-        'inset-custom': 'inset 0 0 50px rgba(var(--border), 1)',
+        'inset-custom': 'inset 0 0 50px rgba(var(--nav-btn-bg), 1)',
         'custom': 'rgba(100, 100, 111, 0.1) 0px 4px 24px 0px',
         'dropdown-btn-shadow': '0 8px 20px rgba(var(--border), 0.4)',
 

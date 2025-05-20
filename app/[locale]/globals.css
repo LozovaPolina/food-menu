@@ -15,23 +15,32 @@
 
 
 .dark {
-  --main-text: 204, 204, 204;
-  --text: 102, 102, 102;
-  --border: 36, 36, 36;
-  --card-bg: 20, 20, 20;
-  --body-bg-color: 9, 9, 9;
-  --btn-color-orange: 255,118,34;
-  --btn-color: 204, 204, 204;
+  --main-text: 230, 240, 250;          /* Clean cool white-blue */
+  --text: 160, 170, 180;               /* Soft steel gray */
+  --border: 55, 65, 75;                /* Dark blue-gray */
+  --card-bg: 28, 32, 38;               /* Graphite blue-charcoal */
+  --body-bg-color: 18, 20, 25;         /* Rich dark navy */
+  --accent: 80, 140, 255;              /* Electric cobalt blue */
+  --price-tag: 60, 220, 190;           /* Vibrant cool teal */
+  --btn-bg: 70, 130, 230;              /* Blue-steel button */
+  --btn-text: 255, 255, 255;
+
+  --nav-btn-bg: 45, 100, 200;          /* Cool navy-cobalt hybrid */
+  --nav-btn-text: 255, 255, 255;
 }
-
 .light {
-  --main-text: 31, 31, 31;
-  --text: 138, 148, 158;
-  --border: 216, 219, 222;
+  --main-text: 30, 35, 45;             /* Dark slate blue */
+  --text: 80, 90, 100;                 /* Steel gray */
+  --border: 200, 210, 220;             /* Cold light gray */
+  --card-bg: 248, 250, 255;            /* Very light blue-gray */
+  --body-bg-color: 235, 240, 250;      /* Soft bluish white */
+  --accent: 60, 120, 230;              /* Crisp cool blue */
+  --price-tag: 40, 190, 170;           /* Sharp teal */
+  --btn-bg: 50, 110, 220;              /* Bold blue */
+  --btn-text: 255, 255, 255;
 
-  --body-bg-color:255, 255, 255;
-  --btn-color-orange: 255,118,34;
-  --btn-color: 244, 245, 246;
+  --nav-btn-bg: 180, 200, 255;         /* Frosted blue for nav */
+  --nav-btn-text: 30, 30, 40;
 }
 
 .scroller {
