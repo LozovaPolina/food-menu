@@ -4,17 +4,21 @@ import {createSlice, type PayloadAction} from "@reduxjs/toolkit";
 import {CategoryItem, itemsByCategoryArray, ItemsByCategoryArrayProps} from "@/data/Meals";
 import {RootState} from "@/redux/store/store";
 
-
+export type CartItemType = { name:string , price: number, image:string, quantity: number }
 type CartState = {
 	items: ItemsByCategoryArrayProps;
 	category: string;
-	categoryItems:CategoryItem[]
+	categoryItems:CategoryItem[];
+	isCartOpen: boolean;
+	cart: CartItemType[]
 }
 
 const initialState:CartState = {
 	items: itemsByCategoryArray,
 	category: 'all',
 	categoryItems: itemsByCategoryArray.flatMap(categoryObj => categoryObj.items),
+	isCartOpen:false,
+	cart:[]
 }
 const menuSlice= createSlice({
 	name: 'cart',
@@ -30,33 +34,41 @@ const menuSlice= createSlice({
 				state.categoryItems = categoryObj ? categoryObj.items : [];
 			}
 		},
-
-
-		addToCart(state, action: PayloadAction<{ id: string; title: string, price: number }>): void {
-
-			const { id, title, price } = action.payload;
-			const itemIndex = state.items.findIndex(item => item.id === id);
+		showOrHideCart(state, action: PayloadAction<boolean>){
+			state.isCartOpen = action.payload
+		},
+		addToCart(
+			state,
+			action: PayloadAction<{ name: string; price: number; image: string }>
+		): void {
+			const { name, price, image } = action.payload;
+			const itemIndex = state.cart.findIndex(item => item.name === name);
 
 			if (itemIndex >= 0) {
-				state.items[itemIndex].quantity++;
+				state.cart[itemIndex].quantity++;
 			} else {
-				state.items.push({ id, title, price, quantity: 1 });
-			}
-
-		},
-		removeFromCart(state, action: PayloadAction<{ id: string; }>): void {
-			const itemIndex = state.items.findIndex(item => item.id === action.payload.id);
-
-			const item = state.items[itemIndex];
-
-			if (item.quantity === 1) {
-				state.items.splice(itemIndex, 1);
-			} else {
-				item.quantity--;
+				state.cart.push({ name, price, image, quantity: 1 });
 			}
 		},
-	},
-})
-export const selectCartItems = ((state:RootState) => state.menu.categoryItems);
-export const { showCategoryItems } = menuSlice.actions;
+
+		removeFromCart(
+			state,
+			action: PayloadAction<{ name: string }>
+		): void {
+			const itemIndex = state.cart.findIndex(item => item.name === action.payload.name);
+
+			if (itemIndex >= 0) {
+				const item = state.cart[itemIndex];
+				if (item.quantity === 1) {
+					state.cart.splice(itemIndex, 1);
+				} else {
+					item.quantity--;
+				}
+			}
+		},
+}})
+export const selectCategoryItems = ((state:RootState) => state.menu.categoryItems);
+export const selectIsCartOpen = ((state:RootState) => state.menu.isCartOpen);
+export const selectCartItems = ((state:RootState) => state.menu.cart);
+export const { showCategoryItems,addToCart, showOrHideCart,removeFromCart } = menuSlice.actions;
 export default menuSlice.reducer;

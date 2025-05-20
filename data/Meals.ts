@@ -1,7 +1,7 @@
 
 export type ItemsByCategoryArrayProps = {
 	category: string,
-	items: CategoryItem[] | []
+	items: CategoryItem[]
 }[]
 export type CategoryItem = { name: string, price: number, image: string, quantity: number }
 export const itemsByCategoryArray: ItemsByCategoryArrayProps = [

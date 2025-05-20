@@ -1,12 +1,11 @@
-"use client"
 
 import React from 'react';
 import Image from "next/image";
 
 
-function PanelBtn({src , alt, }:{src:string; alt:string; }) {
+function PanelBtn({src , alt,onClick }:{src:string; alt:string;onClick?: ()=>void }) {
 	return (
-		<button ><Image src={src} alt={alt}/></button>
+		<button ><Image src={src} alt={alt} onClick={onClick}/></button>
 	);
 }
 
