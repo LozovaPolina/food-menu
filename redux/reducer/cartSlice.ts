@@ -70,5 +70,6 @@ const menuSlice= createSlice({
 export const selectCategoryItems = ((state:RootState) => state.menu.categoryItems);
 export const selectIsCartOpen = ((state:RootState) => state.menu.isCartOpen);
 export const selectCartItems = ((state:RootState) => state.menu.cart);
+export const selectCartQuantity = ((state:RootState) => state.menu.cart.reduce( (prevV,curV, i) => curV.quantity + prevV,0));
 export const { showCategoryItems,addToCart, showOrHideCart,removeFromCart } = menuSlice.actions;
 export default menuSlice.reducer;

@@ -1,5 +1,39 @@
 {
+  "GuestPage": {
+    "selectLang": "Select Language"
+},
   "MenuPage": {
-
+    "categories": {
+      "all": "All",
+      "appetizers": "Appetizers",
+      "salads": "Salads",
+      "burgers": "Burgers",
+      "pasta": "Pasta",
+      "desserts": "Desserts",
+      "drinks": "Drinks",
+      "kids-menu": "Kids Menu",
+      "vegan": "Vegan",
+      "specials": "Specials"
+    },
+    "items": {
+      "Bruschetta": "Bruschetta",
+      "Garlic Bread": "Garlic Bread",
+      "Caesar Salad": "Caesar Salad",
+      "Greek Salad": "Greek Salad",
+      "Classic Burger": "Classic Burger",
+      "Veggie Burger": "Veggie Burger",
+      "Spaghetti Bolognese": "Spaghetti Bolognese",
+      "Pesto Pasta": "Pesto Pasta",
+      "Tiramisu": "Tiramisu",
+      "Cheesecake": "Cheesecake",
+      "Lemonade": "Lemonade",
+      "Iced Tea": "Iced Tea",
+      "Mini Burger": "Mini Burger",
+      "Mac & Cheese": "Mac & Cheese",
+      "Vegan Bowl": "Vegan Bowl",
+      "Tofu Stir Fry": "Tofu Stir Fry",
+      "Lamb Chops with Mint": "Lamb Chops with Mint",
+      "Truffle Risotto": "Truffle Risotto"
+    }
   }
 }

@@ -1,0 +1,39 @@
+{
+  "GuestPage": {
+	"selectLang": "Вибрати мову"
+  },
+  "MenuPage": {
+	"categories": {
+	  "all": "Усі",
+	  "appetizers": "Закуски",
+	  "salads": "Салати",
+	  "burgers": "Бургери",
+	  "pasta": "Паста",
+	  "desserts": "Десерти",
+	  "drinks": "Напої",
+	  "kids-menu": "Дитяче меню",
+	  "vegan": "Веган",
+	  "specials": "Спеціальні пропозиції"
+	},
+	"items": {
+	  "Bruschetta": "Брускетта",
+	  "Garlic Bread": "Часниковий хліб",
+	  "Caesar Salad": "Цезар",
+	  "Greek Salad": "Грецький салат",
+	  "Classic Burger": "Класичний бургер",
+	  "Veggie Burger": "Вегетаріанський бургер",
+	  "Spaghetti Bolognese": "Спагеті Болоньєзе",
+	  "Pesto Pasta": "Паста з песто",
+	  "Tiramisu": "Тірамісу",
+	  "Cheesecake": "Чізкейк",
+	  "Lemonade": "Лимонад",
+	  "Iced Tea": "Холодний чай",
+	  "Mini Burger": "Міні бургер",
+	  "Mac & Cheese": "Макарони з сиром",
+	  "Vegan Bowl": "Веганська миска",
+	  "Tofu Stir Fry": "Тофу в смаженому вигляді",
+	  "Lamb Chops with Mint": "Баранчик з м'ятою",
+	  "Truffle Risotto": "Різотто з трюфелем"
+	}
+  }
+}
