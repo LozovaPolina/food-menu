@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useLayoutEffect,useState} from 'react';
 import {CategoryItem} from "@/data/Meals";
 import Image from "next/image";
 import  bradImg from '../../assets/bread(1).png'
@@ -12,32 +12,31 @@ import {useTranslations} from "next-intl";
 
 
 
+
+
 function CategoriesMealItem({ item }: { item: CategoryItem }) {
 	const [visible, setVisible] = useState(false);
 	const dispatch = useCartDispatch();
 	const { price, name, image } = item;
 	const t = useTranslations('MenuPage');
-	const [firstRender, setFirstRender] = useState(true);
-	useEffect(() => {
-		const timeout = setTimeout(() => setVisible(true), 100);
-		return () => clearTimeout(timeout);
-	}, []);
-
 	const [isClicked, setIsClicked] = useState(false);
+
+	// Set visible immediately before paint
+	useLayoutEffect(() => {
+		setVisible(true);
+	}, []);
 
 	function onClick() {
 		dispatch(addToCart({ price, name, image }));
 		setIsClicked(true);
 	}
 
+	// Reset click state after 800ms
 	useEffect(() => {
+		if (!isClicked) return;
 		const timeout = setTimeout(() => setIsClicked(false), 800);
 		return () => clearTimeout(timeout);
 	}, [isClicked]);
-
-	useEffect(() => {
-		setFirstRender(false);
-	}, []);
 
 	return (
 		<div
@@ -46,7 +45,7 @@ function CategoriesMealItem({ item }: { item: CategoryItem }) {
         ${visible ? 'opacity-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 translate-y-2 invisible pointer-events-none'}
       `}
 		>
-			<Image src={bradImg} alt="bread" className="rounded-2xl object-fill"/>
+			<Image src={bradImg} alt="bread" className="rounded-2xl object-fill" />
 			<div className="px-4 flex flex-col gap-2">
 				<h3 className="text-main-text text-lg sm:text-xl">{t(`items.${item.name}`)}</h3>
 				<div className="px-2 flex justify-between items-center">
@@ -55,13 +54,12 @@ function CategoriesMealItem({ item }: { item: CategoryItem }) {
 						onClick={onClick}
 						className="bg-accent rounded-full flex justify-center items-center hover:opacity-90 w-8 h-8"
 					>
-						{!isClicked && <Image src={plusImg} alt="plus"/>}
-						{isClicked && <Image src={tickImg} alt="tick"/>}
+						{!isClicked && <Image src={plusImg} alt="plus" />}
+						{isClicked && <Image src={tickImg} alt="tick" />}
 					</button>
 				</div>
 			</div>
 		</div>
 	);
 }
-
-export default CategoriesMealItem;
+export default CategoriesMealItem
