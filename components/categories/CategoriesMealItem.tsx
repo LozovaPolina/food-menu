@@ -17,7 +17,7 @@ function CategoriesMealItem({ item }: { item: CategoryItem }) {
 	const dispatch = useCartDispatch();
 	const { price, name, image } = item;
 	const t = useTranslations('MenuPage');
-
+	const [firstRender, setFirstRender] = useState(true);
 	useEffect(() => {
 		const timeout = setTimeout(() => setVisible(true), 100);
 		return () => clearTimeout(timeout);
@@ -35,13 +35,18 @@ function CategoriesMealItem({ item }: { item: CategoryItem }) {
 		return () => clearTimeout(timeout);
 	}, [isClicked]);
 
+	useEffect(() => {
+		setFirstRender(false);
+	}, []);
+
 	return (
 		<div
-			className={`p-2 rounded-2xl bg-card-bg flex flex-col gap-4 flex-grow flex-shrink min-w-[140px] max-w-[45%] sm:max-w-[30%] md:max-w-[22%]  transition-transform duration-700 ease-in-out
-        ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}
+			className={`p-2 rounded-2xl bg-card-bg flex flex-col gap-4 flex-grow flex-shrink min-w-[140px] max-w-[45%] sm:max-w-[30%] md:max-w-[22%]
+        transition-opacity transition-transform duration-700 ease-in-out
+        ${visible ? 'opacity-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 translate-y-2 invisible pointer-events-none'}
       `}
 		>
-			<Image src={bradImg} alt="bread" className="rounded-2xl object-fill" />
+			<Image src={bradImg} alt="bread" className="rounded-2xl object-fill"/>
 			<div className="px-4 flex flex-col gap-2">
 				<h3 className="text-main-text text-lg sm:text-xl">{t(`items.${item.name}`)}</h3>
 				<div className="px-2 flex justify-between items-center">
@@ -50,8 +55,8 @@ function CategoriesMealItem({ item }: { item: CategoryItem }) {
 						onClick={onClick}
 						className="bg-accent rounded-full flex justify-center items-center hover:opacity-90 w-8 h-8"
 					>
-						{!isClicked && <Image src={plusImg} alt="plus" />}
-						{isClicked && <Image src={tickImg} alt="tick" />}
+						{!isClicked && <Image src={plusImg} alt="plus"/>}
+						{isClicked && <Image src={tickImg} alt="tick"/>}
 					</button>
 				</div>
 			</div>
