@@ -9,38 +9,40 @@
   --font-dm-sans-italic: "DM Sans", sans-serif;
   --font-dm-sans-bold-italic: "DM Sans", sans-serif;
 
-
-
 }
 
 
-.dark {
-  --main-text: 230, 240, 250;          /* Clean cool white-blue */
-  --text: 160, 170, 180;               /* Soft steel gray */
-  --border: 55, 65, 75;                /* Dark blue-gray */
-  --card-bg: 28, 32, 38;               /* Graphite blue-charcoal */
-  --body-bg-color: 18, 20, 25;         /* Rich dark navy */
-  --accent: 80, 140, 255;              /* Electric cobalt blue */
-  --price-tag: 60, 220, 190;           /* Vibrant cool teal */
-  --btn-bg: 70, 130, 230;              /* Blue-steel button */
-  --btn-text: 255, 255, 255;
+dark {
+  --main-text: 220, 210, 200;         /* Warm off-white */
+  --text: 180, 170, 160;              /* Muted beige-gray */
+  --border: 90, 75, 65;               /* Dark chocolate brown */
+  --card-bg: 40, 35, 30;              /* Deep espresso brown */
+  --body-bg-color: 25, 22, 20;        /* Almost black with warm undertone */
+  --accent: 255, 120, 80;             /* Burnt orange */
+  --price-tag: 255, 200, 150;         /* Soft peach */
+  --btn-bg: 200, 100, 60;             /* Warm terracotta */
+  --btn-text: 255, 245, 230;          /* Creamy white */
 
-  --nav-btn-bg: 45, 100, 200;          /* Cool navy-cobalt hybrid */
-  --nav-btn-text: 255, 255, 255;
+  --cart-bg: 30, 27, 24;              /* Dark mocha */
+  --nav-btn-bg: 60, 45, 35;           /* Rich cocoa */
+  --nav-btn-text: 255, 245, 230;
 }
+
+/* Light Theme */
 .light {
-  --main-text: 30, 35, 45;             /* Dark slate blue */
-  --text: 80, 90, 100;                 /* Steel gray */
-  --border: 200, 210, 220;             /* Cold light gray */
-  --card-bg: 248, 250, 255;            /* Very light blue-gray */
-  --body-bg-color: 235, 240, 250;      /* Soft bluish white */
-  --accent: 60, 120, 230;              /* Crisp cool blue */
-  --price-tag: 40, 190, 170;           /* Sharp teal */
-  --btn-bg: 50, 110, 220;              /* Bold blue */
-  --btn-text: 255, 255, 255;
+  --main-text: 55, 50, 45;            /* Dark chocolate */
+  --text: 100, 90, 85;                /* Soft coffee brown */
+  --border: 210, 190, 170;            /* Warm sandy beige */
+  --card-bg: 245, 235, 220;           /* Light parchment */
+  --body-bg-color: 255, 250, 240;     /* Creamy off-white */
+  --accent: 80, 150, 110;             /* Muted olive green */
+  --price-tag: 120, 180, 140;         /* Sage green */
+  --btn-bg: 90, 170, 120;             /* Soft moss green */
+  --btn-text: 255, 255, 250;          /* Soft cream */
 
-  --nav-btn-bg: 180, 200, 255;         /* Frosted blue for nav */
-  --nav-btn-text: 30, 30, 40;
+  --cart-bg: 255, 245, 230;           /* Pale warm cream */
+  --nav-btn-bg: 170, 210, 180;        /* Light mint */
+  --nav-btn-text: 55, 50, 45;
 }
 
 .scroller {
@@ -102,4 +104,15 @@
 .custom-scroll {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;     /* Firefox */
+}
+
+.categories-meal-item {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+}
+.categories-meal-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease-in, transform 1s ease-in;
 }

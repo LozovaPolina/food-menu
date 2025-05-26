@@ -12,20 +12,20 @@ module.exports = {
     extend: {
       keyframes: {
         'shoot-arrow': {
-          '0%': {transform: 'translate(0, 0)'},
-          '50%': {transform: 'translate(8px, -8px)'},
-          '100%': {transform: 'translate(0, 0)'},
+          '0%': { transform: 'translate(0, 0)' },
+          '50%': { transform: 'translate(8px, -8px)' },
+          '100%': { transform: 'translate(0, 0)' },
         },
         scroll: {
-          '0%':   { transform: 'translateX(0)' },
+          '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-100%)' },
         },
       },
-        animation: {
-          'arrow-move': 'shoot-arrow 1s ease-in-out',
-          'scroll-x': 'scroll 40s linear infinite',
+      animation: {
+        'arrow-move': 'shoot-arrow 1s ease-in-out',
+        'scroll-x': 'scroll 40s linear infinite',
 
-        },
+      },
       colors: {
         'main-text': 'rgba(var(--main-text))',
         'text': 'rgba(var(--text))',
@@ -40,6 +40,7 @@ module.exports = {
         'btn-text': 'rgba(var(--btn-text))',
         "nav-btn-bg": 'rgba(var(--nav-btn-bg))',
         "nav-btn-text": 'rgba(var(--nav-btn-text))',
+        "cart-bg": 'rgba(var(--cart-bg))'
 
       },
       boxShadow: {
